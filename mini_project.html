@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Highlighter & Runner</title>
+  <link rel="stylesheet" href="style.css">
+<link id="hljs-theme" rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.8/beautify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.8/beautify-css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.8/beautify-html.min.js"></script>
+
+</head>
+<body>
+<header>
+  <h1>💻 Code Highlighter & Runner</h1>
+  <div style="display: flex; gap:1vw">
+    <select id="themeSel">
+      <option value="atom-one-dark">Atom One Dark</option>
+      <option value="github">GitHub Light</option>
+      <option value="vs">VS</option>
+      <option value="monokai">Monokai</option>
+      <option value="solarized-light">Solarized Light</option>
+    </select>
+    <select id="langSel">
+      <option value="javascript">JavaScript</option>
+      <option value="python">Python</option>
+    </select>
+    <button class="btn" id="runBtn">Run</button>
+  </div>
+</header>
+<main>
+  <div id="section12">
+  <section id="section1" class="card">
+    <div class="controls">
+      <label class="btn" for="input_file"><input id="input_file" type="file" accept=".js,.json,.html,.css,.py,text/*" hidden> Import file</label>
+      <button class="btn" id="copyBtn">Copy</button>
+      <button class="btn" id="downloadBtn">Download</button>
+    </div>
+    <div id="textarea">
+      <textarea id="my_code" placeholder="Type or paste code... e.g. <!doctype html>"></textarea>
+    </div>
+    <p>Tip: Select language for better formatting.</p>
+  </section>
+  <section id="section2" class="card">
+    <p id="status">Ready</p>
+    <div id="live_preview" class="abc">
+      <pre><code id="highlighted" class="hljs"></code></pre>
+    </div>
+    <p>Live Preview(auto highlight)</p>
+  </section></div>
+  <div>
+  <h1>Output:</h1>
+  <section id="section3" class="card">
+  <div id="final_preview" class="abc">
+    <pre><code id="codeOut" class="hljs"></code></pre>
+  </div>
+  </section>
+  </div>
+</main>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+<script src="mini_project.js"></script>
+</body>
+</html>
